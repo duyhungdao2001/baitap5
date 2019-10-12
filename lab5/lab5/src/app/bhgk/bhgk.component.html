@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Bán Hàng Giải Khát
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Tên Hàng</th>
+                        <th scope="col">Số Lượng</th>
+                        <th scope="col">Đơn Giá</th>
+                        <th scope="col">Thành Tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = 'let item of sanpham'>
+                        <td><input type="checkbox" (click)="toggleCheckbox(item.name)">{{ item.name }}</td>
+                        <td><input type="number" class="form-control" [disabled]="!item.isValid" [(ngModel)]="item.amount"
+                        [ngModelOptions]="{standalone: true}"></td>
+                        <td>{{ item.price | currency }}</td>
+                        <td>{{ calTotalNumeberEachProduct(item.name | currency)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <strong>Tổng tiền: <span>{{calTotalNumeber() | currency}}</span></strong>
+        </div>
+    </div>
+</div>

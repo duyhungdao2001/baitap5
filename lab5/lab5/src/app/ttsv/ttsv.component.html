@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Họ và Tên</label>
+                    <input type="text" [(ngModel)]="ttsv.name" [ngModelOptions]="{standalone: true}"
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Ngày Sinh</label>
+                    <input type="date" [(ngModel)]="ttsv.date" [ngModelOptions]="{standalone: true}"
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Giới tính</label>
+                    <select class="custom-select" [(ngModel)]="ttsv.gt" [ngModelOptions]="{standalone: true}">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Điểm</label>
+                    <input type="text" [(ngModel)]="ttsv.point" [ngModelOptions]="{standalone: true}"
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Học Lực</label>
+                    <input type="text" [(ngModel)]="ttsv.hocluc" [ngModelOptions]="{standalone: true}"
+                        class="form-control">
+                </div>
+                <button type="button" class="btn btn-primary" (click)="xeploai()">Kết Quả</button>
+            </form>
+        </div>
+    </div>
+</div>
